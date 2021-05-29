@@ -65,6 +65,10 @@ var isloggedin=function(req,res,next){
     }
 }
 
+app.get("/", function(req, res){
+    res.redirect("/home");
+});
+
 app.get("/submit",function(req,res){
     res.render("submit");
 });
