@@ -1,0 +1,35 @@
+<html>
+<head>
+<style>
+.id1{
+  padding: 70px;
+  border: 1px solid black;
+  width: 700px;
+  background-color: lightblue;
+  
+}
+.button {
+  background-color: green;
+  border: 1px solid black;
+  color: white;
+  padding: 15px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body style="background-color:lightgrey;">
+    <div class="id1">
+    <h2>Blog Title: <%=blog.title%></h2> 
+    <h2>Blog Content:</h2>
+    <p><%=blog.content%></p>
+      <% if(username == blog.author.username) {%>
+        <form action='/blog/<%=blog._id%>?_method=delete' method="post"></form>
+        <button class="button" type="submit" >Delete</button></form></div>
+      <% } %>
+</body>
+</html>

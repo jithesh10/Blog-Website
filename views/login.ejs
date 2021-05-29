@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>Login form</title>
+<style>
+.button {
+  background-color: green;
+  border: 1px solid black;
+  color: white;
+  padding: 15px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+#id1{
+  padding: 70px;
+  border: 1px solid black;
+  width: 300px;
+  background-color: orange;
+  
+}
+</style>
+     <script type="text/javascript">
+
+      function validate(form){
+        var username = form.uname.value;
+        var password = form.pwd.value;
+	var ck_username = /^[A-Za-z0-9_]{1,20}$/;
+        var ck_password = /^[A-Za-z0-9!@#$%^&*()_]{6,20}$/;
+        var errors = [];
+
+        if (!ck_username.test(username)) {
+            errors[errors.length] = "Username not valid!!Only specify letters and numbers.";
+        }
+        if (!ck_password.test(password)) {
+            errors[errors.length] = "Please enter a valid password!! ";
+        }
+        if (errors.length > 0) {
+
+            reportErrors(errors);
+            return false;
+        }
+        return true;
+      }
+      function reportErrors(errors){
+        var msg = "Please Enter Valide Data...\n";
+        for (var i = 0; i<errors.length; i++) {
+            var numError = i + 1;
+            msg += "\n" + numError + ". " + errors[i];
+        }
+        alert(msg);
+      }
+</script>
+</head>
+<body style="background-image: url('https://www.wpbeginner.com/wp-content/uploads/2018/07/whatisblog.png'); font-family: sans-serif;font-size: 20;">
+<center><div id="id1">
+<h1>Login Form</h1>
+		<center><form action="/login" method="post" name="form" onSubmit="return validate(this)" style="color:white; font-family: sans-serif;font-size: 15;">
+
+  			<center><div class="container">
+    			<label for="uname" style="color:white; font-family: sans-serif;font-size: 20;"><b>Username:</b></label>
+    			<input type="text" placeholder="Enter Username" id="username" name="username" required><br><br>
+
+    			<label for="psw"><b>Password:</b></label>
+    			<input type="password" placeholder="Enter Password" id="password" name="password" required>
+    			<br><br>
+
+    			<label>
+      			<input type="checkbox" checked="checked" name="remember"> Remember me</label>
+    			<br><br>
+    			<button class="button" type="submit">Login</button>
+  			</div>
+  			<div id="signup">
+  				<h4>To create a account, click here!</h4>
+  				<a href="signup">Create Account</a>
+  			</div>
+			<br>
+  			<div class="container">
+    			<span class="psw"><a href="#">Forgot password?</a></span>
+  			</div></center>
+		</form></center>
+</div></center>
+</body>
+</html>

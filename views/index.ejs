@@ -1,0 +1,42 @@
+<html>
+<head> 
+    <style>
+        .id1{
+          padding: 70px;
+          border: 1px solid black;
+          width: 700px;
+          background-color: lightblue;
+          
+        }
+        .button {
+          background-color: green;
+          border: 1px solid black;
+          color: white;
+          padding: 15px 24px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+        </style>  
+</head>
+<body style="background-color:lightgrey;">
+    <p align="right">
+        <button class="button" type="submit" onclick="location.href = '/logout';">Logout</button>
+        <button class="button" type="submit" onclick="location.href = '/submit';">Upload</button>
+    </p>
+	<div>
+		<% blogs.forEach(function(b){ %>
+		<div class="id1">
+        <h2>Blog Title: <%=b.title%></h2> 
+        <h2>Blog Content:</h2>
+        <p><%=b.content.substring(0,30)%></p>
+        <a href="/blog/<%=b._id%>">Read more</a>
+        </div>
+        <br>
+        <%})%>
+    </div>  
+</body>
+</html>

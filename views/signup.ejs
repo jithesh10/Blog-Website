@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>SignUp form</title>
+<style>
+.button {
+  background-color: green;
+  border: 1px solid black;
+  color: white;
+  padding: 15px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.id1{
+  padding: 70px;
+  border: 1px solid black;
+  width: 300px;
+  background-color: orange;
+}
+</style>
+    <script type="text/javascript">
+      
+      function validate(form){
+        var username = form.uname.value;
+        var password = form.psw.value;
+        var rep_password = form.pswrepeat.value;
+        var ck_password =  /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
+        var ck_email = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
+
+        var errors = [];
+ 
+	if (!ck_email.test(username)) {
+          errors[errors.length] = "Please enter a valid email address.";
+         }
+        if (!ck_password.test(password) && !ck_password.test(rep_password)) {
+            errors[errors.length] = "Please enter a valid password!!Min 8. ";
+        }
+        if(password!=rep_password){
+            errors[errors.length] = "Password does not match!!Please enter the same password";
+        }
+
+        if (errors.length > 0) {
+
+            reportErrors(errors);
+            return false;
+        }
+        return true;
+      }
+      function reportErrors(errors){
+        var msg = "Please Enter Valide Data...\n";
+        for (var i = 0; i<errors.length; i++) {
+            var numError = i + 1;
+            msg += "\n" + numError + ". " + errors[i];
+        }
+        alert(msg);
+      }
+    </script>
+  </head>
+<center>
+    <form name="form" action="/register" method="post" class="id1" onSubmit="return validate(this)">
+<h1>Sign Up</h1>
+        <h3>Please fill in this form to create an account.</h3>
+      <center><div class="container">
+
+        <label for="username"><b>Username:</b></label>
+        <input type="text" name="username" placeholder="username" id="uname" required><br><br>
+
+        <label for="psw"><b>Password:</b></label>
+        <input type="password" name="password" placeholder="Password" id="psw" required><br><br>
+
+        <label for="psw-repeat"><b>Repeat Password:</b></label>
+        <input type="password" placeholder="Repeat Password" id="pswrepeat" required><br><br>
+
+        <h3>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</h3>
+
+        <div class="clearfix">
+          <button class="button" type="submit" class="signupbtn">Sign Up</button>
+        </div>
+      </div></center>
+    </form></center>  
+  <body style="background-image: url('https://www.wpbeginner.com/wp-content/uploads/2018/07/whatisblog.png');">
+  </body>
+</html>

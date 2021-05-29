@@ -1,0 +1,32 @@
+<html>
+<head>
+<style>
+.button {
+  background-color: green;
+  border: 1px solid black;
+  color: white;
+  padding: 15px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body style="background-color:lightgrey;">
+<h1><center>Blogs</h1></center>
+<center><img src="http://www.etrendtalk.com/wp-content/uploads/2020/05/blog.jpg" width="500px"></center><br>
+<center><div>
+  <H3>>Publish your passions, your way. Create a unique and beautiful blog. It’s easy and free.</H3>
+  <H3>>Join millions of others. Whether sharing your expertise, breaking news, or whatever’s on your mind, you’re in good company.</H3>
+  <H3>>Sign up to discover why millions of people have published their passions here.</H3><br></div></center>
+  <center>
+  <% if(authenticated == 0) {%>
+<button class="button" type="submit" onclick="location.href = '/login';">Login</button>
+<button class="button" type="submit" onclick="location.href = '/register';">Signup</button>
+<% } %>
+<button class="button" type="submit" onclick="location.href = '/blog';">Post a blog</button></center>
+</body>
+</html>

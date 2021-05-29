@@ -1,0 +1,42 @@
+<html>
+<head>
+<style>
+#id1{
+  padding: 70px;
+  border: 1px solid black;
+  width: 300px;
+  background-color: orange;
+  
+}
+.button {
+  background-color: green;
+  border: 1px solid black;
+  color: white;
+  padding: 15px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body style="background-color:lightgrey;">
+<p align="right">
+<button class="button" type="submit" onclick="location.href = '/logout';">Logout</button></p>
+<center><div id="id1">
+  <center><h1>Blog Form</h1>
+		<form action="/blog" method="post" name="blog" style="color:white; font-family: sans-serif;font-size: 15;">
+
+  			<div class="container">
+    			<label for="title" style="color:white; font-family: sans-serif;font-size: 20;"><b>Blog Title:</b></label>
+    			<input type="text" placeholder="Enter the Title" id="title" name="blog[title]" required><br><br>
+
+			<label for="content" ><b>Blog Content:</b></label><br>
+			<textarea rows="10" cols="40" name="blog[content]"></textarea><br><br>
+			
+			<button class="button" type="submit">Upload</button><br><br></div></center></form>
+    </center>
+</body>
+</html>
