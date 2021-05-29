@@ -28,7 +28,7 @@
     <h2>Blog Content:</h2>
     <p><%=blog.content%></p>
       <% if(username == blog.author.username) {%>
-        <form action='/blog/<%=blog._id%>?_method=delete' method="post"></form>
+        <form action='/blog/<%=blog._id%>?_method=delete' method="post">
         <button class="button" type="submit" >Delete</button></form></div>
       <% } %>
 </body>

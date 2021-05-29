@@ -6,7 +6,7 @@ const session = require("express-session");
 const passport = require("passport");
 const methodoverride=require("method-override");
 const passportLocalMongoose = require("passport-local-mongoose");
-const url = 'mongodb+srv://admin-jithesh:test123@cluster0.5vnsl.mongodb.net/userDB?retryWrites=true&w=majority';
+const url = process.env.MONGO_URL;
 const findOrCreate = require('mongoose-findorcreate');
 const app = express();
 
