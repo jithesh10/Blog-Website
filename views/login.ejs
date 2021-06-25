@@ -32,10 +32,10 @@
         var errors = [];
 
         if (!ck_username.test(username)) {
-            errors[errors.length] = "Username not valid!!Only specify letters and numbers.";
+            errors[errors.length] = "Invalid Email";
         }
         if (!ck_password.test(password)) {
-            errors[errors.length] = "Please enter a valid password!! ";
+            errors[errors.length] = "Invalid password";
         }
         if (errors.length > 0) {
 
@@ -60,8 +60,8 @@
 		<center><form action="/login" method="post" name="form" onSubmit="return validate(this)" style="color:white; font-family: sans-serif;font-size: 15;">
 
   			<center><div>
-    			<label for="uname" style="color:white; font-family: sans-serif;font-size: 20;"><b>Username:</b></label>
-    			<input type="text" placeholder="Enter Username" id="username" name="username" required><br><br>
+    			<label for="uname" style="color:white; font-family: sans-serif;font-size: 20;"><b>Email:</b></label>
+    			<input type="text" placeholder="Enter Email" id="username" name="username" required><br><br>
 
     			<label for="psw"><b>Password:</b></label>
     			<input type="password" placeholder="Enter Password" id="password" name="password" required>
