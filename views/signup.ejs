@@ -36,7 +36,7 @@
           errors[errors.length] = "Please enter a valid email address.";
          }
         if (!ck_password.test(password) && !ck_password.test(rep_password)) {
-            errors[errors.length] = "Please enter a valid password!!Min 8. ";
+            errors[errors.length] = "Password must contain minimum one lowercase letter,uppercase letter,number and special character.";
         }
         if(password!=rep_password){
             errors[errors.length] = "Password does not match!!Please enter the same password";
@@ -66,11 +66,11 @@
         <h3>Please fill in this form to create an account.</h3>
       <center><div>
 
-        <label for="username"><b>Username:</b></label>
-        <input type="text" name="username" placeholder="username" id="uname" required><br><br>
+        <label for="username"><b>Email:</b></label>
+        <input type="text" name="username" placeholder="Enter Email" id="uname" required><br><br>
 
         <label for="psw"><b>Password:</b></label>
-        <input type="password" name="password" placeholder="Password" id="psw" required><br><br>
+        <input type="password" name="password" placeholder="Enter Password" id="psw" required><br><br>
 
         <label for="psw-repeat"><b>Repeat Password:</b></label>
         <input type="password" placeholder="Repeat Password" id="pswrepeat" required><br><br>
