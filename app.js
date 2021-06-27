@@ -9,6 +9,7 @@ const passportLocalMongoose = require("passport-local-mongoose");
 const url = process.env.MONGO_URL;
 const findOrCreate = require('mongoose-findorcreate');
 const app = express();
+const alert = require("alert");
 
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
@@ -152,6 +153,7 @@ app.post("/blog",isloggedin,function(req,res){
         else{
             blog.author={id:req.user.id,username:req.user.username};
             blog.save(function(){
+                alert("Blog has been uploaded successfully!!");
                 res.redirect('/index');
             })
         }
